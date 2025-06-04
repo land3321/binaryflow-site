@@ -14,7 +14,7 @@ animate();
 function init() {
   const loadingScreen = document.createElement('div');
   loadingScreen.innerText = 'Loading BinaryFlow...';
-  loadingScreen.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:#000;color:#0f0;font-family:monospace;font-size:2rem;display:flex;align-items:center;justify-content:center;z-index:9999';
+  loadingScreen.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:#000;color:#0f24;font-family:monospace;font-size:2rem;display:flex;align-items:center;justify-content:center;z-index:9999';
   document.body.appendChild(loadingScreen);
 
   setTimeout(() => loadingScreen.remove(), 2000);
