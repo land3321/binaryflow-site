@@ -57,11 +57,11 @@
     });
 
     function loadScript() {
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.src = './main.js';
-      document.body.appendChild(script);
-    }
+  const script = document.createElement('script');
+  script.type = 'module';
+  script.src = './verifyHead.js'; // ✅ load face generation first
+  document.body.appendChild(script);
+}
   </script>
 </body>
 </html>
