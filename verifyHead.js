@@ -1,4 +1,4 @@
-// verifyHead.js – Simulated 3D Binary Face Decoder (Fallback version with sphere)
+// Combined view – No verification, launches BinaryFlow directly after intro
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -37,7 +37,7 @@ function init() {
 
   createBinaryParticles();
 
-  // ✅ After 5 seconds, load BinaryFlow engine
+  // ✅ Automatically transition to BinaryFlow engine
   setTimeout(() => {
     renderer.domElement.remove();
     const script = document.createElement('script');
