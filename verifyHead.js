@@ -39,13 +39,14 @@ function init() {
 
   createBinaryParticles();
 
+  // ✅ After 5 seconds, load BinaryFlow engine
   setTimeout(() => {
-    document.body.removeChild(renderer.domElement);
+    renderer.domElement.remove();
     const script = document.createElement('script');
     script.type = 'module';
     script.src = './main.js';
     document.body.appendChild(script);
-  }, 5000); // Simulated processing duration
+  }, 5000);
 }
 
 function createBinaryParticles() {
