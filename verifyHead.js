@@ -30,12 +30,11 @@ function init() {
 
   new OrbitControls(camera, renderer.domElement);
 
-  const loader = new GLTFLoader();
-  loader.load('./model.glb', (gltf) => {
-    headModel = gltf.scene;
-    headModel.scale.set(1.2, 1.2, 1.2);
-    scene.add(headModel);
-  });
+  const geometry = new THREE.SphereGeometry(1.2, 32, 32);
+const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, wireframe: true });
+headModel = new THREE.Mesh(geometry, material);
+scene.add(headModel);
+
 
   createBinaryParticles();
 
