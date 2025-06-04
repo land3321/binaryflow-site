@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BinaryFlow</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      overflow: hidden;
+    }
+    #verify-container {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    #verify-container input, #verify-container button {
+      background: none;
+      border: 1px solid #fff;
+      color: #fff;
+      margin-top: 20px;
+      padding: 10px;
+      font-family: inherit;
+    }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <div id="verify-container">
+    <h1>Verify Your Humanity</h1>
+    <button onclick="requestPhoto()">Take Photo to Continue</button>
+    <input id="photoInput" type="file" accept="image/*" capture="user" style="display: none;" />
+  </div>
+
+  <script>
+    function requestPhoto() {
+      document.getElementById('photoInput').click();
+    }
+
+    document.getElementById('photoInput').addEventListener('change', (event) => {
+      const container = document.getElementById('verify-container');
+      container.innerHTML = '<p>Analyzing facial structure...</p>';
+
+      setTimeout(() => {
+        container.remove();
+        loadScript();
+      }, 2500); // fake processing
+    });
+
+    function loadScript() {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = './main.js';
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
