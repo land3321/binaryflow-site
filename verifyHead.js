@@ -1,7 +1,6 @@
-// verifyHead.js – Simulated 3D Binary Face Decoder
+// verifyHead.js – Simulated 3D Binary Face Decoder (Fallback version with sphere)
 
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 let scene, camera, renderer, headModel, binaryParticles = [];
@@ -30,11 +29,11 @@ function init() {
 
   new OrbitControls(camera, renderer.domElement);
 
+  // 🧠 Fallback model (sphere head)
   const geometry = new THREE.SphereGeometry(1.2, 32, 32);
-const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, wireframe: true });
-headModel = new THREE.Mesh(geometry, material);
-scene.add(headModel);
-
+  const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, wireframe: true });
+  headModel = new THREE.Mesh(geometry, material);
+  scene.add(headModel);
 
   createBinaryParticles();
 
